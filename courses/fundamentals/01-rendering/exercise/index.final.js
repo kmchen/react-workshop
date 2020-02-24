@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa'
 import Heading from 'YesterTech/Heading'
 import StarRatings from './StarRatings'
-import 'YesterTech/styles/center-lesson.scss'
+import './styles/center-lesson.scss'
 
 const products = [
   { id: 1, name: 'Mario Kart', rating: 5, brand: 'Nintendo', condition: 'new' },
@@ -28,4 +28,7 @@ function BrowseProducts() {
   )
 }
 
-ReactDOM.render(<BrowseProducts />, document.getElementById('root'))
+// ReactDOM.render(<BrowseProducts />, document.getElementById('root'))
+BrowseProducts.title = '01-rendering';
+
+export {BrowseProducts as default}

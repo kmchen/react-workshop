@@ -8,10 +8,10 @@ const concurrently = require('concurrently')
  */
 
 const appPaths = {
-  fundamentals: path.resolve(__dirname, '..', 'apps', 'YesterTech'),
-  electives: path.resolve(__dirname, '..', 'apps', 'YesterTech'),
+  fundamentals: path.resolve(__dirname, '..', 'courses'),
+  //electives: path.resolve(__dirname, '..', 'apps', 'YesterTech'),
   // Unless we want advanced to have it's own app
-  advanced: path.resolve(__dirname, '..', 'apps', 'YesterTech'),
+  //advanced: path.resolve(__dirname, '..', 'apps', 'YesterTech'),
 }
 
 module.exports = function() {
@@ -20,6 +20,17 @@ module.exports = function() {
   // Are we trying to choose an app or a lesson to load
   const { appPath, alias } = process.argv[2] === 'app' ? { appPath: getAppPath() } : selectLesson()
 
+  if(process.argv[2] != 'app') {
+    console.log({
+      appEntry: path.resolve(appPath, 'index.js'),
+      alias: alias || {},
+    })
+    
+    return {
+      appEntry: path.resolve(appPath, 'index.js'),
+      alias: alias || {},
+    }
+  }
   /**
    * Does the app use a json-server database
    */
@@ -63,6 +74,7 @@ function selectLesson() {
     const data = fs.readFileSync(preferencesPath, 'utf8')
     preferences = JSON.parse(data)
   } catch (err) {
+
     // no-op
   }
 
@@ -83,9 +95,9 @@ function selectLesson() {
 
     // Read course options and make list
     const coursesPath = path.resolve(__dirname, '..', 'courses')
-    const courseOptions = fs.readdirSync(coursesPath).filter(item => {
+    let courseOptions = fs.readdirSync(coursesPath).filter(item => {
       return fs.lstatSync(path.resolve(coursesPath, item)).isDirectory()
-    })
+    });
 
     // See if the user made a pre-selection in cli: `npm start fundamentals`
     // or if they have one listed in their `preferences.json` file
@@ -202,7 +214,7 @@ function selectLesson() {
   const alias = {}
   fs.readdirSync(lessonPath).forEach(file => {
     const name = path.basename(file, '.js')
-    alias[`YesterTech/${name}`] = path.join(lessonPath, file)
+    alias[`fundamentals/${name}`] = path.join(lessonPath, file)
   })
 
   return { appPath: appPaths[selectedCourse], alias }
