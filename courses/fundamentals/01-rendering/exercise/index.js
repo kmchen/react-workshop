@@ -4,7 +4,7 @@
 //import Heading from 'YesterTech/Heading'
 //import 'YesterTech/StarRatings.scss'
 //import 'YesterTech/styles/center-lesson.scss'
-
+//
 //const products = [
 //  { id: 1, name: 'Mario Kart', rating: 5, brand: 'Nintendo', condition: 'new' },
 //  { id: 2, name: 'Donkey Kong', rating: 3.5, brand: 'Nintendo', condition: 'good' },
@@ -12,7 +12,8 @@
 //]
 //
 //function BrowseProducts() {
-//  return <div>{/* Exercise code goes here! */}</div>
+//  return <div>Halo</div>
 //}
-
+//
+//export {BrowseProducts as default}
 //ReactDOM.render(<BrowseProducts />, document.getElementById('root'))

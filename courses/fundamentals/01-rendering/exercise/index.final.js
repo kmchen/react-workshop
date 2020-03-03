@@ -1,6 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa'
+//import ReactDOM from 'react-dom'
+//import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa'
 import Heading from 'YesterTech/Heading'
 import StarRatings from './StarRatings'
 import './styles/center-lesson.scss'
@@ -28,7 +28,8 @@ function BrowseProducts() {
   )
 }
 
-// ReactDOM.render(<BrowseProducts />, document.getElementById('root'))
+//ReactDOM.render(<BrowseProducts />, document.getElementById('root'))
+
 BrowseProducts.title = '01-rendering';
 
 export {BrowseProducts as default}
