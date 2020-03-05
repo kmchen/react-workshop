@@ -3,7 +3,7 @@ import React from 'react'
 //import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa'
 import Heading from 'YesterTech/Heading'
 import StarRatings from './StarRatings'
-import './styles/center-lesson.scss'
+import '../../styles/center-lesson.scss'
 
 const products = [
   { id: 1, name: 'Mario Kart', rating: 5, brand: 'Nintendo', condition: 'new' },
