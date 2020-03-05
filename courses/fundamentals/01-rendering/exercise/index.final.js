@@ -28,8 +28,6 @@ function BrowseProducts() {
   )
 }
 
-//ReactDOM.render(<BrowseProducts />, document.getElementById('root'))
-
-BrowseProducts.title = '01-rendering';
+BrowseProducts.title = '01';
 
 export {BrowseProducts as default}
